@@ -45,7 +45,9 @@ class MarkdownFile():
             """
             Returns a markdown valid header link
             """
-            temp = str(headerName).replace(" ", "-").replace("/", "").replace(",", '').replace(".", "").replace(":", '').lower()
+            temp = str(headerName).replace(" ", "-").lower()
+            for replacing in ["/", ',', '"', "'", ".", ":", "`", "(", "[", "~", ")", "]", "°", "¨", "\\", "?", "!"]:
+                temp = temp.replace(replacing, "")
             if temp in pastHeaders:
                 number = 0
                 while temp in pastHeaders:
@@ -297,11 +299,14 @@ class Link():
     """
     A link element for the markdown file
     """
-    def __init__(self, link, title=None) -> None:
+    def __init__(self, link, title=None, hoverTitle=None) -> None:
+        putHoverTitle = ""
+        if hoverTitle is not None:
+            putHoverTitle = f' "{str(hoverTitle)}"'
         if title is None:
-            self.content = f"[{str(link)}]({str(link)})"
+            self.content = f"[{str(link)}]({str(link)}{putHoverTitle})"
         else:
-            self.content = f"[{str(title)}]({str(link)})"
+            self.content = f"[{str(title)}]({str(link)}{putHoverTitle})"
 
     def __repr__(self) -> str:
         return self.content
