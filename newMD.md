@@ -2,9 +2,9 @@
 ## This is a test for markdown-creation  
 1. [Hey](#hey)
     - [This is a test for markdown-creation](#this-is-a-test-for-markdown-creation)
-2. [What am I going to do?](#what-am-i-going-to-do?)
+2. [What am I going to do?](#what-am-i-going-to-do)
     - [Let me test code blocks](#let-me-test-code-blocks)
-        - [I'm running out of idea to write](#i'm-running-out-of-idea-to-write)
+        - [I'm running out of idea to write](#im-running-out-of-idea-to-write)
   
 I hope that it will work *properly*  
 ---  
