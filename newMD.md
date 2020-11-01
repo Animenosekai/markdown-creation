@@ -1,30 +1,25 @@
 # Hey  
-### I'm just testing the module  
-This is a text
-: This is his first definition
-: This is his second definition  
-> Anime no Sekai - 2020  
+## This is a test for markdown-creation  
+1. [Hey](#hey)
+    - [This is a test for markdown-creation](#this-is-a-test-for-markdown-creation)
+2. [What am I going to do?](#what-am-i-going-to-do?)
+    - [Let me test code blocks](#let-me-test-code-blocks)
+        - [I'm running out of idea to write](#i'm-running-out-of-idea-to-write)
+  
+I hope that it will work *properly*  
 ---  
-- Testing the list
-- second element  
-1. Testing the list
-2. second element  
-Hey how are you all  
-I'm testing this feature with `Python`  
+# What am I going to do?  
+Well for example I could put a [**link**](https://animenosekai.herokuapp.com/status)[^1]  
+This is an inline code: `pip install markdown-creation`  
+## Let me test code blocks  
 ```json
 {
-    "hey": "wow"
+    "key": "value",
+    "details": "this is a test of the code block"
 }
 ```  
-Let me link you something[^1]real quick  
-[My server status page](https://animenosekai.herokuapp.com/status)  
-I will test Strikethrough text too like ~~this one~~  
-**Now I'm gonna add a text in *italic***  
-| Key | Value | wow | ahoy |
-| :----- | :-----: | -----: | :-----: |
-| Hey | yeHhjsdgfjhdsfjhdgf | kjzehkjhe | ahoy |
-| Hqdjsqkdhqskjdheyo | oyeH | yohooo | ahoy |
-| weeeee | reeeeee | ahooyyyy | ahoy |
-| ahoy | ahoy | ahoy | ahoy |
-  
-[^1]: wow little footnote you didn't see it coming  
+I think that I will print out the table of content with newMD.tableOfContent(2)  
+And I'll maybe try to output an html file  
+##### I'm running out of idea to write  
+> Anime no Sekai - 2020  
+[^1]: I don't know if it will work  

@@ -38,6 +38,51 @@ class MarkdownFile():
         """
         self.content.append(object)
 
+    def tableOfContent(self, level):
+        pastHeaders = []
+        
+        def _getLink(headerName):
+            """
+            Returns a markdown valid header link
+            """
+            temp = str(headerName).replace(" ", "-").replace("/", "").replace(",", '').replace(".", "").replace(":", '').lower()
+            if temp in pastHeaders:
+                number = 0
+                while temp in pastHeaders:
+                    number += 1
+                    temp = temp + "-" + str(number)
+            for hyphen in range(temp.count("-")):
+                if hyphen > 1:
+                    temp.replace("-" * hyphen, "-")
+            pastHeaders.append(temp)
+            temp = "#" + temp
+            return temp
+
+        results = ""
+        iteration = 0
+        levels = []
+        currentHeader = 0
+        for header in self.headers:
+            if header.level in list(range(1, level + 1)):
+                if header.level == 1:
+                    headerLevel = 0
+                    iteration += 1
+                    headerTitle = header.content[header.level + 1:]
+                    results += f"{str(iteration)}. [{headerTitle}]({_getLink(headerTitle)})\n"
+                else:
+                    headerTitle = header.content[header.level + 1:]
+                    headerLevel = header.level
+                    if currentHeader == 0:
+                        headerLevel = 0
+                    else:
+                        if headerLevel > levels[currentHeader - 1]:
+                            headerLevel = levels[currentHeader - 1] + 1
+                    results += "    " * headerLevel + f"- [{headerTitle}]({_getLink(headerTitle)})\n"
+            levels.append(headerLevel)
+            currentHeader += 1
+        return results
+
+
     def render(self):
         """
         Renders the file and outputs it as a string
@@ -70,7 +115,7 @@ class MarkdownFile():
                 for level in range(1, 7):
                     header = _getHeader(level)
                     if header is not None:
-                        return header
+                        return header[level + 1:]
                     continue
                 return "Markdown Render"
 
@@ -139,10 +184,11 @@ class Header():
     """
     A header element for the markdown file
     """
-    def __init__(self, text, level):
+    def __init__(self, text, level, markdownObj=MarkdownFile()):
         self.text = text
         self.level = level
         self.content = "#" * level + " " + text
+        markdownObj.headers.append(self)
 
     def __repr__(self) -> str:
         return self.content
@@ -549,3 +595,21 @@ class BoldAndItalicText():
     
     def __radd__(self, other):
         return str(other) + str(self.content)
+
+
+class TableOfContent:
+    """
+    A table of content element for the markdown file
+    """
+    class TableOfContent_Content:
+
+        def __get__(self, obj, objtype=None):
+            return obj.markdownObj.tableOfContent(obj.level)
+
+    content = TableOfContent_Content()
+    def __init__(self, markdownObj, level):
+        self.markdownObj = markdownObj
+        self.level = level
+
+    def __repr__(self) -> str:
+        return self.content

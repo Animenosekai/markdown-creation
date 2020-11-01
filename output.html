@@ -16,93 +16,98 @@
    <h1>
     Hey
    </h1>
-   <h3>
-    I’m just testing the module
-   </h3>
-   <dl>
-    <dt>
-     This is a text
-    </dt>
-    <dd>
-     This is his first definition
-    </dd>
-    <dd>
-     This is his second definition
-     <blockquote>
-      <p>
-       Anime no Sekai - 2020
-      </p>
-     </blockquote>
-    </dd>
-   </dl>
-   <hr/>
-   <ul>
+   <h2>
+    This is a test for markdown-creation
+   </h2>
+   <ol>
     <li>
-     Testing the list
+     <a href="#hey">
+      Hey
+     </a>
+     <ul>
+      <li>
+       <a href="#this-is-a-test-for-markdown-creation">
+        This is a test for markdown-creation
+       </a>
+      </li>
+     </ul>
     </li>
     <li>
-     second element
+     <a href="#what-am-i-going-to-do?">
+      What am I going to do?
+     </a>
+     <ul>
+      <li>
+       <a href="#let-me-test-code-blocks">
+        Let me test code blocks
+       </a>
+       <ul>
+        <li>
+         <a href="#i'm-running-out-of-idea-to-write">
+          I’m running out of idea to write
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
     </li>
-    <li>
-     Testing the list
-    </li>
-    <li>
-     second element
-     <br/>
-     Hey how are you all
-     <br/>
-     I’m testing this feature with
-     <code>
-      Python
-     </code>
-    </li>
-   </ul>
-   <div class="codehilite">
-    <pre><span></span><code><span class="p">{</span>
-    <span class="nt">"hey"</span><span class="p">:</span> <span class="s2">"wow"</span>
-<span class="p">}</span>
-</code></pre>
-   </div>
+   </ol>
+   <h2>
+    I hope that it will work
+    <em>
+     properly
+    </em>
+   </h2>
+   <h1>
+    What am I going to do?
+   </h1>
    <p>
-    Let me link you something
+    Well for example I could put a
+    <a href="https://animenosekai.herokuapp.com/status">
+     <strong>
+      link
+     </strong>
+    </a>
     <sup id="fnref:1">
      <a class="footnote-ref" href="#fn:1">
       1
      </a>
     </sup>
-    real quick
     <br/>
-    <a href="https://animenosekai.herokuapp.com/status">
-     My server status page
-    </a>
-    <br/>
-    I will test Strikethrough text too like ~~this one~~
-    <br/>
-    <strong>
-     Now I’m gonna add a text in
-     <em>
-      italic
-     </em>
-    </strong>
-    <br/>
-    | Key | Value | wow | ahoy |
-    <br/>
-    | :----- | :-----: | -----: | :-----: |
-    <br/>
-    | Hey | yeHhjsdgfjhdsfjhdgf | kjzehkjhe | ahoy |
-    <br/>
-    | Hqdjsqkdhqskjdheyo | oyeH | yohooo | ahoy |
-    <br/>
-    | weeeee | reeeeee | ahooyyyy | ahoy |
-    <br/>
-    | ahoy | ahoy | ahoy | ahoy |
+    This is an inline code:
+    <code>
+     pip install markdown-creation
+    </code>
    </p>
+   <h2>
+    Let me test code blocks
+   </h2>
+   <div class="codehilite">
+    <pre><span></span><code><span class="p">{</span>
+    <span class="nt">"key"</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+    <span class="nt">"details"</span><span class="p">:</span> <span class="s2">"this is a test of the code block"</span>
+<span class="p">}</span>
+</code></pre>
+   </div>
+   <p>
+    I think that I will print out the table of content with newMD.tableOfContent(2)
+    <br/>
+    And I’ll maybe try to output an html file
+   </p>
+   <h5>
+    I’m running out of idea to write
+   </h5>
+   <blockquote>
+    <p>
+     Anime no Sekai - 2020
+    </p>
+   </blockquote>
    <div class="footnote">
     <hr/>
     <ol>
      <li id="fn:1">
       <p>
-       wow little footnote you didn’t see it coming
+       I don’t know if it will work
        <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">
         ↩
        </a>
