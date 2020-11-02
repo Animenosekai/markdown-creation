@@ -21,15 +21,15 @@ class MarkdownFile():
         """
         def writeToFile(fileInstance):
             for line in self.content:
-                fileInstance.write(str(line) + '  \n')
+                fileInstance.write(str(line) + '  \n\n')
             for note in self.footnotes:
-                fileInstance.write(str(note) + '  \n')
+                fileInstance.write(str(note) + '  \n\n')
         
         if appendToExistingFile:
-            with open(destination, 'a+') as outputFile:
+            with open(destination, 'a+', encoding="utf-8") as outputFile:
                 writeToFile(outputFile)
         else:
-            with open(destination, 'w+') as outputFile:
+            with open(destination, 'w+', encoding="utf-8") as outputFile:
                 writeToFile(outputFile)
 
     def add(self, object):
@@ -91,9 +91,9 @@ class MarkdownFile():
         """
         result = ""
         for element in self.content:
-            result += str(element) + '  \n'
+            result += str(element) + '  \n\n'
         for element in self.footnotes:
-            result += str(element) + '  \n'
+            result += str(element) + '  \n\n'
         return result
     
     def html(self, title=None, onlyMarkdown=False, minify=False, destination=None):
@@ -396,9 +396,12 @@ class Table():
                 currentLine += f" {str(alignements[iteration][0])}-----{str(alignements[iteration][1])} |"
         self.content += currentLine + "\n"
 
-        for lineNumber, _ in enumerate(values):
+        #print("New Table")
+        for lineNumber, _ in enumerate(values[0]):
             currentLine = ""
-            for iteration, _ in enumerate(headers):
+            #print("Current line is: " + str(lineNumber))
+            for iteration, hey in enumerate(headers):
+                #print("Current column is: " + str(iteration))
                 if iteration == 0:
                     currentLine += "| " + values[iteration][lineNumber] + " |"
                 else:

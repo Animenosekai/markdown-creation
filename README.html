@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>
+   markdown-creation
+  </title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/gh/Animenosekai/markdown-creation/pygmentsOutput/styles/codeStyling.css" rel="stylesheet"/>
+  <style>
+   body { font-family: Helvetica, Arial, sans-serif; }
+                        code, pre { font-family: monospace; }
+  </style>
+ </head>
+ <body>
+  <div class="markdownCreation-Render-Output">
+   <h1>
+    markdown-creation
+   </h1>
+   <blockquote>
+    <p>
+     A markdown file creation module for Python!
+    </p>
+   </blockquote>
+   <h1>
+    Table of Content
+   </h1>
+   <ol>
+    <li>
+     <a href="#markdown-creation">
+      markdown-creation
+     </a>
+    </li>
+    <li>
+     <a href="#table-of-content">
+      Table of Content
+     </a>
+    </li>
+    <li>
+     <a href="#what-is-markdown-creation">
+      What is markdown-creation?
+     </a>
+     <ul>
+      <li>
+       <a href="#features">
+        Features
+       </a>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <a href="#how-to-use">
+      How to use?
+     </a>
+     <ul>
+      <li>
+       <a href="#markdownfile">
+        MarkdownFile
+       </a>
+       <ul>
+        <li>
+         <a href="#header">
+          Header
+         </a>
+        </li>
+        <li>
+         <a href="#quote">
+          Quote
+         </a>
+        </li>
+        <li>
+         <a href="#orderedlist">
+          OrderedList
+         </a>
+        </li>
+        <li>
+         <a href="#list">
+          List
+         </a>
+        </li>
+        <li>
+         <a href="#inlinecode">
+          InlineCode
+         </a>
+        </li>
+        <li>
+         <a href="#blockcode">
+          BlockCode
+         </a>
+        </li>
+        <li>
+         <a href="#separator">
+          Separator
+         </a>
+        </li>
+        <li>
+         <a href="#link">
+          Link
+         </a>
+        </li>
+        <li>
+         <a href="#image">
+          Image
+         </a>
+        </li>
+        <li>
+         <a href="#table">
+          Table
+         </a>
+        </li>
+        <li>
+         <a href="#footnote">
+          Footnote
+         </a>
+        </li>
+        <li>
+         <a href="#headingid">
+          HeadingID
+         </a>
+        </li>
+        <li>
+         <a href="#definition">
+          Definition
+         </a>
+        </li>
+        <li>
+         <a href="#strikethrough">
+          Strikethrough
+         </a>
+        </li>
+        <li>
+         <a href="#tasklist">
+          TaskList
+         </a>
+        </li>
+        <li>
+         <a href="#paragraph">
+          Paragraph
+         </a>
+        </li>
+        <li>
+         <a href="#boldtext">
+          BoldText
+         </a>
+        </li>
+        <li>
+         <a href="#italictext">
+          ItalicText
+         </a>
+        </li>
+        <li>
+         <a href="#boldanditalictext">
+          BoldAndItalicText
+         </a>
+        </li>
+        <li>
+         <a href="#tableofcontent">
+          TableOfContent
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </li>
+    <li>
+     <a href="#dependencies">
+      Dependencies
+     </a>
+    </li>
+    <li>
+     <a href="#by-the-way">
+      By the way
+     </a>
+    </li>
+   </ol>
+   <h1>
+    What is markdown-creation?
+   </h1>
+   <p>
+    markdown-creation is a Python Module which lets you write Markdown Files (
+    <code>
+     .md
+    </code>
+    files like
+    <code>
+     README.md
+    </code>
+    )
+   </p>
+   <p>
+    Especially useful when it comes down to creating your documentations programmatically (writing scripts to automate things) or rendering files for web servers, it can do many things!
+   </p>
+   <h2>
+    Features
+   </h2>
+   <ul>
+    <li>
+     Markdown File Creation
+    </li>
+    <li>
+     Automatic Table of Content creation
+    </li>
+    <li>
+     Table creation
+    </li>
+    <li>
+     HTML output (normal or minified)
+    </li>
+    <li>
+     Less syntax errors
+    </li>
+    <li>
+     Easy to use
+    </li>
+   </ul>
+   <h1>
+    How to use?
+   </h1>
+   <h3>
+    Here is a list of all the objects which comes with markdown-creation
+   </h3>
+   <h2>
+    MarkdownFile
+   </h2>
+   <p>
+    This object initializes a new markdown file
+   </p>
+   <blockquote>
+    <p>
+     You need to initialize a markdown file to put content in it. To initialize a new markdown file, just call it in a variable
+     <code>
+      myAwesomeFile = MarkdownFile()
+     </code>
+    </p>
+   </blockquote>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Functions
+      </th>
+      <th align="center">
+       Description
+      </th>
+      <th align="center">
+       Arguments
+      </th>
+      <th align="center">
+       Returned Value
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       <code>
+        add()
+       </code>
+      </td>
+      <td align="center">
+       Adds a line to the markdown file
+      </td>
+      <td align="center">
+       object: What you want to add (it could be multiple objects but inside of an object, a string)
+      </td>
+      <td align="center">
+       Nothing
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       <code>
+        save()
+       </code>
+      </td>
+      <td align="center">
+       Saves the markdown file to the given location
+      </td>
+      <td align="center">
+       destination: The destination of the file; appendToExistingFile: Wether or not you want to override (False) or append (True) if the file is already existing
+      </td>
+      <td align="center">
+       Nothing
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       <code>
+        tableOfContent()
+       </code>
+      </td>
+      <td align="center">
+       Returns a string representing the table of content at the current state (yeah I can’t predict what you’re going to put inside your file)
+      </td>
+      <td align="center">
+       level: The maximum header level you want to add
+      </td>
+      <td align="center">
+       A string with the table of content
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       <code>
+        render()
+       </code>
+      </td>
+      <td align="center">
+       Renders the whole file into a string
+      </td>
+      <td align="center">
+       No argument
+      </td>
+      <td align="center">
+       A string with the markdown file
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       <code>
+        html()
+       </code>
+      </td>
+      <td align="center">
+       Renders the file as an HTML file and gives back a string (and outputs it if you set the destination argument)
+      </td>
+      <td align="center">
+       title: Set this if you want to override the HTML title tag (by default it takes the first header content); onlyMarkdown: If you don’t want a whole HTML file but only the HTML representation of your markdown file; minify: If you want to minify the HTML; destination: Set this argument if you want to output your HTML file
+      </td>
+      <td align="center">
+       A string with the HTML file
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <p>
+    There is no arguments to pass for the MarkdownFileobject.
+   </p>
+   <hr/>
+   <h2>
+    Header
+   </h2>
+   <p>
+    This object returns a markdown header (# content) and adds a header to the index of headers of the provided markdown file
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Header()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Headerobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The content of the header
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       level
+      </td>
+      <td align="center">
+       The level of the header (how many #)
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       markdownObj
+      </td>
+      <td align="center">
+       The MarkdownFile() object you want to add the header (used to make the Table of Content)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Quote
+   </h2>
+   <p>
+    This object returns a markdown quotation text (&gt; content)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Quote()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Quoteobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The content of the quote
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       level
+      </td>
+      <td align="center">
+       The level of the quotation (how many &gt;)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    OrderedList
+   </h2>
+   <p>
+    This object returns a markdown ordered list (
+    <br/>
+    1. content
+    <br/>
+    2. content)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      OrderedList()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the OrderedListobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       inputList
+      </td>
+      <td align="center">
+       The list to turn into a markdown ordered list
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+      </td>
+      <td align="center">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    List
+   </h2>
+   <p>
+    This object returns a markdown list (
+    <br/>
+    - content
+    <br/>
+    - content)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      List()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Listobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       inputList
+      </td>
+      <td align="center">
+       The list to turn into a markdown unordered list
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    InlineCode
+   </h2>
+   <p>
+    This object returns a markdown inline code string (
+    <code>
+     code content
+    </code>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      InlineCode()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the InlineCodeobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       code
+      </td>
+      <td align="center">
+       The content of the inline code
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    BlockCode
+   </h2>
+   <p>
+    This object returns a markdown code block (
+   </p>
+   <div class="codehilite">
+    <pre><span></span><code><span class="err">code  </span>
+</code></pre>
+   </div>
+   <p>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      CodeBlock()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the BlockCodeobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       code
+      </td>
+      <td align="center">
+       The content of the block code
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       language
+      </td>
+      <td align="center">
+       (optional) The language of the code if your markdown preprocessor is able to do syntax highlighting (normally it can)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Separator
+   </h2>
+   <p>
+    This object returns a markdown separator (—)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Separator()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Separatorobject.
+   </p>
+   <p>
+    There is no arguments to pass for the Separatorobject.
+   </p>
+   <hr/>
+   <h2>
+    Link
+   </h2>
+   <p>
+    This object returns a markdown link (
+    <a href="link" title="hover title">
+     title
+    </a>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Link()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Linkobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       link
+      </td>
+      <td align="center">
+       The link
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       title
+      </td>
+      <td align="center">
+       (optional) a title for the link which will be displayed to the user instead of the full link
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       hoverTitle
+      </td>
+      <td align="center">
+       A title for the link which will be displayed when the user hovers the link
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Image
+   </h2>
+   <p>
+    This object returns a markdown image (
+    <img alt="alt text" src="image URL"/>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Image()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Imageobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       URL
+      </td>
+      <td align="center">
+       The URL of the image
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       alt_text
+      </td>
+      <td align="center">
+       (optional) An alt text for the image (by default it is the name found on the given URL)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Table
+   </h2>
+   <p>
+    This object returns a markdown table (
+    <br/>
+    |header|
+    <br/>
+    |—|
+    <br/>
+    |value|)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Table()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Tableobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       headers
+      </td>
+      <td align="center">
+       A list of headers
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       values
+      </td>
+      <td align="center">
+       A list of lists of values
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       alignement
+      </td>
+      <td align="center">
+       (optional) the alignement for the table (could be a string (left, center or right) or a list to define the alignement of each column)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Footnote
+   </h2>
+   <p>
+    This object returns a markdown footnote (text[^1]    and then at the end of the file [^1]: note)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Footnote()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Footnoteobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       note
+      </td>
+      <td align="center">
+       The content of the note
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       markdownObj
+      </td>
+      <td align="center">
+       The markdown object you want to append the footnote to (it will be added at render time)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    HeadingID
+   </h2>
+   <p>
+    This object returns a markdown heading id ({#id})
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      HeadingID()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the HeadingIDobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       id
+      </td>
+      <td align="center">
+       The new Heading ID
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       correctSyntax
+      </td>
+      <td align="center">
+       If you want to correct the syntax of the ID (incomplete for now)
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Definition
+   </h2>
+   <dl>
+    <dt>
+     This object returns a markdown definition (
+    </dt>
+    <dt>
+     word
+    </dt>
+    <dd>
+     definition)
+    </dd>
+   </dl>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Definition()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Definitionobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       word
+      </td>
+      <td align="center">
+       The word to define
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       definition
+      </td>
+      <td align="center">
+       Either a string for one definition or a list of multiple definitions
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Strikethrough
+   </h2>
+   <p>
+    This object returns a markdown strikethrough text (~~text~~)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Strikethrough()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Strikethroughobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The text to strikethrough
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    TaskList
+   </h2>
+   <p>
+    This object returns a markdown tasklist ([x] do something)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      TaskList()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Functions
+      </th>
+      <th align="center">
+       Description
+      </th>
+      <th align="center">
+       Arguments
+      </th>
+      <th align="center">
+       Returned Value
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       <code>
+        addTask()
+       </code>
+      </td>
+      <td align="center">
+       Adds a task to the TaskList
+      </td>
+      <td align="center">
+       task: The task; checked (optional): Wether it is checked
+      </td>
+      <td align="center">
+       Nothing
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       task
+      </td>
+      <td align="center">
+       The task
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       checked
+      </td>
+      <td align="center">
+       Wether it is checked or not
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    Paragraph
+   </h2>
+   <p>
+    This object returns a markdown paragraph (text)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      Paragraph()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the Paragraphobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The content of the paragraph
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    BoldText
+   </h2>
+   <p>
+    This object returns a markdown bold text (
+    <strong>
+     text
+    </strong>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      BoldText()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the BoldTextobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The text
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    ItalicText
+   </h2>
+   <p>
+    This object returns a markdown italic text (
+    <em>
+     text
+    </em>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      ItalicText()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the ItalicTextobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The text
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    BoldAndItalicText
+   </h2>
+   <p>
+    This object returns a markdown bold and italic text (
+    <strong>
+     <em>
+      text
+     </em>
+    </strong>
+    )
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      BoldAndItalicText()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the BoldAndItalicTextobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       text
+      </td>
+      <td align="center">
+       The text
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h2>
+    TableOfContent
+   </h2>
+   <p>
+    This object returns a markdown table of content (
+    <br/>
+    1. Header
+    <br/>
+    - Something
+    <br/>
+    2. Header
+    <br/>
+    - Something else)
+   </p>
+   <blockquote>
+    <p>
+     Call
+     <code>
+      TableOfContent()
+     </code>
+     with the needed argument
+    </p>
+   </blockquote>
+   <p>
+    There is no functions for the TableOfContentobject.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th align="center">
+       Argument
+      </th>
+      <th align="center">
+       Description
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td align="center">
+       markdownObj
+      </td>
+      <td align="center">
+       The MarkdownFile object
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       level
+      </td>
+      <td align="center">
+       The maximum level of heading to include
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <hr/>
+   <h1>
+    Dependencies
+   </h1>
+   <p>
+    Here is a list of the depencies used by markdown-creation
+   </p>
+   <p>
+    They are automatically downloaded if you install it through pip
+   </p>
+   <blockquote>
+    <p>
+     These dependencies are only used to convert the markdown file to HTML
+    </p>
+   </blockquote>
+   <ul>
+    <li>
+     markdown - to convert markdown to html
+    </li>
+    <li>
+     beautifulsoup4 - to prettify the html
+    </li>
+    <li>
+     htmlmin - to minify the html
+    </li>
+   </ul>
+   <hr/>
+   <h1>
+    By the way
+   </h1>
+   <p>
+    This whole file was created with markdown-creation (the creation script is
+    <code>
+     createDocs.py
+    </code>
+    )
+   </p>
+   <blockquote>
+    <p>
+     © Anime no Sekai - 2020
+    </p>
+   </blockquote>
+  </div>
+ </body>
+</html>
